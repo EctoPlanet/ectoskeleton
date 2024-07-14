@@ -1,0 +1,10 @@
+---
+const { heroImage, heading, subheading, intro } = Astro.props;
+---
+
+<section>
+  <img src={heroImage} alt={heading} />
+  <h1>{heading}</h1>
+  <h2>{subheading}</h2>
+  <p>{intro}</p>
+</section>

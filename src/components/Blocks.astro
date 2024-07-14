@@ -1,0 +1,30 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Hero from '@components/Hero.astro';
+
+interface Props {
+  page: string; // Add a prop for the page slug
+}
+
+const { page } = Astro.props;
+
+const { data } = await getEntry('pages', page);
+const blocks = data?.blocks ?? [];
+---
+{Array.isArray(blocks) && blocks.length > 0 ? (
+    blocks.map(block => {
+      if (block.discriminant === 'heroBlock') {
+        return (
+          <Hero
+            heroImage={block.value.heroImage}
+            heading={block.value.heading}
+            subheading={block.value.subheading}
+            intro={block.value.intro}
+          />
+        );
+      } 
+      return null;
+    })
+  ) : (
+    <p>No blocks available</p>
+  )}

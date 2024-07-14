@@ -1,8 +1,12 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import Image from '@components/Image.astro';
+import Blocks from '@components/Blocks.astro';
 
 const posts = await getCollection('posts');
+
+
 ---
 
 <Layout title="Keystatic & Astro's Content Collections">
@@ -20,10 +24,15 @@ const posts = await getCollection('posts');
       {
         posts.map(post => (
           <li>
-            <a href={`/posts/${post.slug}`}>{post.data.title}</a>
+            <a href={`/posts/${post.slug}`}>
+              <Image imageMetadata={post.data.featuredImage} /> 
+
+            {post.data.title}</a>
           </li>
         ))
       }
     </ul>
   </div>
+
+  <Blocks page="home" />
 </Layout>

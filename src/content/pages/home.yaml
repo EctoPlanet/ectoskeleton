@@ -1,0 +1,9 @@
+title: Home
+blocks:
+  - discriminant: heroBlock
+    value:
+      heroImage: src/assets/images/hero/home/blocks/0/value/heroImage.jpg
+      heroImageAlt: Hero Image Alt
+      heading: Hero Heading
+      subheading: Hero Subheading
+      intro: Hero intro text
