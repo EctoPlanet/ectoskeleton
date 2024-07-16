@@ -1,7 +1,7 @@
 ---
-import { getCollection, getEntry } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import Image from '@components/Image.astro';
+import { getCollection, getEntry, getEntries } from 'astro:content';
+import Layout from '@layouts/Layout.astro';
+import Image from '@components/DynamicImage.astro';
 import Blocks from '@components/Blocks.astro';
 
 const posts = await getCollection('posts');
@@ -9,30 +9,9 @@ const posts = await getCollection('posts');
 
 ---
 
-<Layout title="Keystatic & Astro's Content Collections">
-  <div>
-    <h1>Keystatic ⚡️ + Astro 🚀</h1>
-    <p>
-      This homepage shows how to load data from Astro's content collections.
-    </p>
-    <p>
-      <a href="/keystatic">Click here to visit the Admin UI</a>, or the link
-      below to view a post in the collection.
-    </p>
-    <h2>Posts</h2>
-    <ul>
-      {
-        posts.map(post => (
-          <li>
-            <a href={`/posts/${post.slug}`}>
-              <Image imageMetadata={post.data.featuredImage} /> 
-
-            {post.data.title}</a>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+<Layout title="Ectostatic">
 
   <Blocks page="home" />
+
+
 </Layout>

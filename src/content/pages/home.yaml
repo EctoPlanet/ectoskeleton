@@ -1,9 +1,18 @@
-title: Home
+title: home
 blocks:
   - discriminant: heroBlock
     value:
-      heroImage: src/assets/images/hero/home/blocks/0/value/heroImage.jpg
-      heroImageAlt: Hero Image Alt
-      heading: Hero Heading
+      heroImage: /src/assets/images/hero/home/blocks/0/value/heroImage.jpg
+      heroImageAlt: hero image
+      heading: This is a Hero Heading
       subheading: Hero Subheading
       intro: Hero intro text
+      buttons:
+        - label: Contact
+          link: '#'
+          style: primary
+          size: small
+  - discriminant: postsBlock
+    value:
+      heading: Latest Posts
+      quantity: 3

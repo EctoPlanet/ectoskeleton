@@ -1,13 +1,27 @@
-import { config, fields, collection } from '@keystatic/core';
-import { posts } from 'src/cms/collections';
-import { pages } from 'src/cms/collections/pages';
+import { config } from '@keystatic/core';
+import { posts } from '@cms/collections';
+import { pages } from '@cms/collections';
+import { navbar } from '@cms/singletons/navbar';
+import { settings } from '@cms/singletons';
 
 export default config({
   storage: {
     kind: 'local',
   },
+  ui: {
+    brand: { name: 'Dashboard' },
+    navigation: {
+      'Content': ['pages',  'posts' ],
+      'Settings': ['navbar', 'settings'],
+    },
+    
+  },
   collections: {
     posts,
     pages
   },
+  singletons: {
+    navbar,
+    settings
+  }
 });
