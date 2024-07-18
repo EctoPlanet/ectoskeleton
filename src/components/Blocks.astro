@@ -24,8 +24,9 @@ const blocks = data?.blocks ?? [];
       return (
        
             <Hero
-              heroImage={block.value.heroImage}
+              heroImage={`${block.value.heroImage}`}
               heroImageAlt={block.value.heroImageAlt}
+              heroImageClass="max-w-1/2 rounded-lg shadow-2xl"
               heading={block.value.heading}
               subheading={block.value.subheading}
               intro={block.value.intro}

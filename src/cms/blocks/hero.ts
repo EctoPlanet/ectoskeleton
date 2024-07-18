@@ -8,7 +8,7 @@ export const hero = {
         label: "Hero Image",
         description: "Hero image",
         directory: "src/assets/images/hero",
-        publicPath: "/src/assets/images/hero/",
+        publicPath: "@assets/images/hero/",
         validation: { isRequired: true }
       }),
       heroImageAlt: fields.text({ label: 'Hero Image Alt text', validation: { length: { min: 1 } }}),

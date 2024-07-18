@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import HeroImage from "@components/HeroImage.astro";
 import Button from "@components/ui/Button";
 
@@ -8,8 +7,7 @@ const { heroImage, heading, subheading, intro, heroImageAlt, class: className, b
 <section class="bg-base-200">
   <div class="max-w-screen-2xl mx-auto p-6">
     <div class="flex justify-between items-center flex-col lg:flex-row-reverse max-w-screen-2xl py-10">
-      <!-- <HeroImage imagePath={heroImage} altText={heroImageAlt} class="max-w-sm rounded-lg shadow-2xl" /> -->
-      <Image src={heroImage} alt={heroImageAlt} class="max-w-1/2 rounded-lg shadow-2xl" width={500} height={500}/>
+      <HeroImage imagePath={`${heroImage}`} altText={heroImageAlt} class="h-96 w-auto rounded-lg shadow-2xl"  />
       <div class="space-y-6">
         <h1 class="text-5xl font-bold">{heading}</h1>
         <h2 class="text-4xl font-semibold">{subheading}</h2>
