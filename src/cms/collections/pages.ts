@@ -17,4 +17,5 @@ export const pages = collection({
         }
       ),
     },
+    
   });

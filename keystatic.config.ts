@@ -7,6 +7,9 @@ import { settings } from '@cms/singletons';
 export default config({
   storage: {
     kind: 'local',
+    // kind: 'github',
+    // repo: `${import.meta.env.REPO_OWNER}/${import.meta.env.REPO_NAME}`
+    
   },
   ui: {
     brand: { name: 'Dashboard' },
