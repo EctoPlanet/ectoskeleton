@@ -15,4 +15,4 @@ blocks:
   - discriminant: postsBlock
     value:
       heading: Latest Posts
-      quantity: 3
+      quantity: 1

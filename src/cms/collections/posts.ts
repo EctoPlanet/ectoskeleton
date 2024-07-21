@@ -8,7 +8,7 @@ export const posts = collection({
   entryLayout: 'content',
   format: { contentField: 'content' },
   schema: {
-    title: fields.text({ label: 'Title', validation: { isRequired: true } }),
+    title: fields.slug({ name: { label: 'Title', validation: { isRequired: true, length: { min: 1 } } }  }),
     featuredImage: fields.image({
       label: "Featured Image",
       directory: "src/assets/images/posts",
@@ -28,14 +28,11 @@ export const posts = collection({
     excerpt: fields.text({ label: 'Excerpt', multiline: true, description: 'A brief description of this article' }),
     publishedDate: fields.date({ label: "Published date" }),
     tags: fields.array(
-      fields.relationship({
-        label: 'tags',
-        description: 'A list of tags for this post',
-        collection: 'tags'
-      }), {
-        label: 'tags',
+      fields.text({ label: 'Tag' }),
+      {
+        label: 'Tag',
         itemLabel: props => props.value
       }
-    ),
+    )
   },
 });

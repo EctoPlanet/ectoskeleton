@@ -10,11 +10,8 @@
       "@blocks/*": ["./src/components/blocks/*"],
       "@cms/*": ["./src/cms/*"],
       "@layouts/*": ["./src/layouts/*"],
-      "@utils/*": ["src/api/*"],
+      "@api/*": [".src/api/*"],
+      "@content/*": ["./src/content/*"],
     },
-    "include": [
-      "src/**/*.ts",
-      "src/**/*.tsx"
-    ]
   }
 }

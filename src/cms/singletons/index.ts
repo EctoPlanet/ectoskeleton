@@ -1,3 +1,2 @@
-export * from "./settings";
-export * from "./footer";
+export * from "./branding";
 export * from "./navbar";

@@ -1,7 +1,7 @@
 ---
-import { getEntry,getCollection } from 'astro:content';
+import { getEntry, getCollection } from 'astro:content';
 import Hero from '@blocks/Hero.astro';
-import Posts from '@blocks/Posts.astro'
+import Posts from '@blocks/Posts.astro';
 
 interface Props {
   page: string; 
@@ -10,40 +10,29 @@ interface Props {
 const { page } = Astro.props;
 
 const posts = await getCollection('posts');
-
-
 const { data } = await getEntry('pages', page);
 const blocks = data?.blocks ?? [];
-
-
 ---
 
-{
-  blocks.map(block => {
-    if (block.discriminant === 'heroBlock') {
-      return (
-       
-            <Hero
-              heroImage={`${block.value.heroImage}`}
-              heroImageAlt={block.value.heroImageAlt}
-              heroImageClass="max-w-1/2 rounded-lg shadow-2xl"
-              heading={block.value.heading}
-              subheading={block.value.subheading}
-              intro={block.value.intro}
-              buttons={block.value.buttons || []} 
-            />
-        
-        
-      );
-    } else if (block.discriminant === 'postsBlock') {
-          return (
-            <Posts 
-              posts={posts}
-              heading={block.value.heading}
-              
-            />
-          );
-        }
-     
-  })
-}
+{blocks.map(block => {
+  if (block.discriminant === 'heroBlock') {
+    return (
+      <Hero
+        heroImage={`${block.value.heroImage}`}
+        heroImageAlt={block.value.heroImageAlt}
+        heroImageClass="max-w-1/2 rounded-lg shadow-2xl"
+        heading={block.value.heading}
+        subheading={block.value.subheading}
+        intro={block.value.intro}
+        buttons={block.value.buttons || []} 
+      />
+    );
+  } else if (block.discriminant === 'postsBlock') {
+    return (
+      <Posts 
+        posts={posts}
+        heading={block.value.heading}
+      />
+    );
+  }
+})}
