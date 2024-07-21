@@ -1,5 +1,5 @@
 import { config } from '@keystatic/core';
-import { posts } from '@cms/collections';
+import { posts, tags } from '@cms/collections';
 import { pages } from '@cms/collections';
 import { navbar } from '@cms/singletons/navbar';
 import { settings } from '@cms/singletons';
@@ -14,14 +14,15 @@ export default config({
   ui: {
     brand: { name: 'Dashboard' },
     navigation: {
-      'Content': ['pages',  'posts' ],
+      'Content': ['pages',  'posts', 'tags' ],
       'Settings': ['navbar', 'settings'],
     },
     
   },
   collections: {
     posts,
-    pages
+    pages,
+    tags
   },
   singletons: {
     navbar,
