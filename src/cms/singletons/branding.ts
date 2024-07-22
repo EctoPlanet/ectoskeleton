@@ -6,7 +6,7 @@ export const branding = singleton({
     schema:{
         site: fields.object({
            siteName: fields.text({ label: 'Site Name' })
-
+                     
         })
     }
 });

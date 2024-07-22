@@ -2,6 +2,7 @@
 import { getEntry, getCollection } from 'astro:content';
 import Hero from '@blocks/Hero.astro';
 import Posts from '@blocks/Posts.astro';
+import Form from '@blocks/Form'; // Ensure this path is correct
 
 interface Props {
   page: string; 
@@ -32,6 +33,14 @@ const blocks = data?.blocks ?? [];
       <Posts 
         posts={posts}
         heading={block.value.heading}
+      />
+    );
+  } else if (block.discriminant === 'formBlock') {
+    // Ensure correct field data is passed
+    const fields = Array.isArray(block.value.items) ? block.value.items : [];
+    return (
+      <Form
+        fields={fields} // Ensure this is always an array
       />
     );
   }

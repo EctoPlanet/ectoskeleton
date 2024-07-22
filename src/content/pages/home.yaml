@@ -1,4 +1,5 @@
 title: home
+draft: false
 blocks:
   - discriminant: heroBlock
     value:
@@ -16,3 +17,24 @@ blocks:
     value:
       heading: Latest Posts
       quantity: 1
+  - discriminant: formBlock
+    value:
+      name: contact
+      recipients:
+        - email: patrick@thewebsiteguy.uk
+      items:
+        - label: Name
+          settings:
+            discriminant: text
+            value:
+              required: true
+        - label: Email
+          settings:
+            discriminant: email
+            value:
+              required: true
+        - label: Message
+          settings:
+            discriminant: textarea
+            value:
+              required: true

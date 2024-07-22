@@ -1,7 +1,7 @@
 ---
 import { getCollection, getEntry, getEntries } from 'astro:content';
 import Layout from '@layouts/Layout.astro';
-import Form from '@components/Form';
+import Form from '@components/SampleForm';
 import Blocks from '@components/Blocks.astro';
 
 const posts = await getCollection('posts');
@@ -13,6 +13,6 @@ const posts = await getCollection('posts');
 
   <Blocks page="home" />
 
-  <Form client:load />
+
   
 </Layout>
