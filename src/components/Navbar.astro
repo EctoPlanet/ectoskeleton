@@ -1,5 +1,6 @@
 ---
 import { getEntry } from 'astro:content'
+import { Image } from 'astro:assets';
 import Button from '@components/ui/Button'
 const pageData = await getEntry('settings', 'navbar', )
 const branding = await getEntry('settings', 'branding')
@@ -52,7 +53,15 @@ const siteSetting = branding.data.site
             ))}
             
         </div>
-        <a href="/" class="btn btn-ghost text-xl">{siteSetting.siteName}</a>
+        <a href="/" class="btn btn-ghost text-xl flex flex-row items-center">
+          {siteSetting.logoLight && (
+            <Image src={`${siteSetting.logoLight}`} alt="logo" width="50" height="50" class="dark:hidden" />
+          )}
+          {siteSetting.logoDark && (
+            <Image src={`${siteSetting.logoDark}`} alt="logo" width="50" height="50" class="hidden dark:block" />
+          )}
+          {siteSetting.siteName}
+        </a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 ">

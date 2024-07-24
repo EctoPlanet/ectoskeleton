@@ -33,6 +33,12 @@ export const posts = collection({
         label: 'Tag',
         itemLabel: props => props.value
       }
-    )
+    ),
+    seo: fields.object({
+      keywords: fields.text({ label: 'Keywords' }),
+    }, {
+      label: 'SEO', // This is the label for the SEO group
+      description: 'Additional SEO if required', // Optional description
+    }),
   },
 });

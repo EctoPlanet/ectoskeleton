@@ -11,6 +11,30 @@ export const pages = collection({
         label: 'Draft',
         description: 'Set this page as draft to prevent it from being published'
       }),
+      seo: fields.conditional(
+        // See fields.conditional docs for details on the conditional field
+        fields.checkbox({ 
+          label: 'Custom SEO', 
+          description: 'Define custom SEO tags for this page',
+          defaultValue: false,
+        }),
+        {
+          // If condition is false, show… no fields!
+          false: fields.empty(),
+      
+          // Otherwise, show some fields
+          true: fields.object({
+            title: fields.text({ label: 'Title' }),
+            description: fields.text({ label: 'Description', multiline: true }),
+            keywords: fields.text({ label: 'Keywords' }),
+            mage: fields.image({ 
+              label: 'SEO Image',
+              directory: 'public/images/pages',
+              publicPath: '/images/pages/', 
+            }),
+          }),
+        }
+      ),
       blocks: fields.blocks(
         {
             heroBlock: hero,
@@ -19,8 +43,10 @@ export const pages = collection({
         },
         { 
           label: 'Blocks',
+          description: 'The building blocks of the page'
         }
       ),
+      
     },
     
   });

@@ -1,7 +1,7 @@
 import { config } from '@keystatic/core';
 import { posts, pages } from '@cms/collections';
 import { navbar } from '@cms/singletons/navbar';
-import { branding } from '@cms/singletons';
+import { branding, seo } from '@cms/singletons';
 
 export default config({
   storage: {
@@ -14,7 +14,7 @@ export default config({
     brand: { name: 'Dashboard' },
     navigation: {
       'Content': ['pages',  'posts',  ],
-      'Settings': ['navbar', 'branding' ],
+      'Settings': ['navbar', 'branding', 'seo' ],
     },
     
   },
@@ -24,6 +24,7 @@ export default config({
   },
   singletons: {
     navbar,
-    branding
+    branding,
+    seo
   }
 });

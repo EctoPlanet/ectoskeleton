@@ -1,5 +1,9 @@
 ---
 import Navbar from '@components/Navbar.astro';
+import { getEntry } from 'astro:content'
+const branding = await getEntry('settings', 'branding')
+
+const siteSetting = branding.data.site
 
 
 export interface Props {
@@ -15,7 +19,10 @@ const { pageTitle } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		{siteSetting.favicon && (
+			<link rel="icon" href={siteSetting.favicon} />
+          )}
+		
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle}</title>
 	</head>
