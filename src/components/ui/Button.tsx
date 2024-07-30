@@ -1,16 +1,16 @@
-const Button = ({ link, label, style, size, icon }) => {
+const Button = ({ link, label, style, type, size, icon }) => {
     const sizeClasses = {
-      default: '',
-      large: 'btn-lg',
-      small: 'btn-sm',
-      tiny: 'btn-xs',
-      wide: 'btn-wide',
+      default: 'btn',
+      large: 'btn btn-lg',
+      small: 'btn btn-sm',
+      tiny: 'btn btn-xs',
+      wide: 'btn btn-wide',
     };
   
     return (
       <button
         className={`
-          btn 
+          ${sizeClasses[size] || 'btn'}
           ${style === 'primary' ? 'btn-primary' : ''}
           ${style === 'secondary' ? 'btn-secondary' : ''}
           ${style === 'accent' ? 'btn-accent' : ''}
@@ -21,7 +21,7 @@ const Button = ({ link, label, style, size, icon }) => {
           ${style === 'outline' ? 'btn-outline' : ''}
           ${style === 'ghost' ? 'btn-ghost' : ''}
           ${style === 'link' ? 'btn-link' : ''}
-          ${sizeClasses[size] || ''}
+          
         `}
       
       >   

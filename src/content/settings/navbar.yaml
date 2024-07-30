@@ -7,5 +7,5 @@ links:
 buttons:
   - label: Test Button
     link: '#'
-    style: primary
+    style: outline
     size: ''
