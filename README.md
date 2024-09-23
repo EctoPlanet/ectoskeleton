@@ -1,13 +1,13 @@
-## Ecto Skeleton: Astro Starter Theme with Keystatic & Page Builder
+## Ectostatic: Astro Starter Theme with Keystatic & Page Builder
 
-Ecto Skeleton is a starter theme for Astro that was built to streamline website development. It integrates Keystatic CMS for content management, a drag-and-drop page builder with pre-built reusable blocks, a form builder with Nodemailer setup, and Tailwind CSS & DaisyUI for rapid styling.
+Ectostatic is a starter theme for Astro that was built to streamline website development. It integrates Keystatic CMS for content management, a drag-and-drop page builder with pre-built reusable blocks, a form builder with Nodemailer setup, and Tailwind CSS & DaisyUI for rapid styling.
 
 ### Getting Started
 
 1. Clone this repository:
 
 ```sh 
-git clone https://github.com/Ec/ecto-skeleton.git
+git clone https://github.com/EctoPlanet/ectostatic.git
 ```
 
 2. Install dependencies:
