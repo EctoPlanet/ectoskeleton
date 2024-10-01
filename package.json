@@ -3,22 +3,23 @@
   "version": "0.0.39",
   "license": "MIT",
   "dependencies": {
-    "@astrojs/markdoc": "^0.11.3",
-    "@astrojs/node": "^8.3.2",
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/markdoc": "^0.11.4",
+    "@astrojs/node": "^8.3.4",
+    "@astrojs/react": "^3.6.2",
+    "@astrojs/tailwind": "^5.1.1",
     "@keystatic/astro": "^5.0.0",
-    "@keystatic/core": "^0.5.27",
-    "@react-email/components": "^0.0.21",
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/react": "^18.2.8",
-    "@types/react-dom": "^18.0.11",
-    "astro": "^4.12.2",
+    "@keystatic/core": "^0.5.36",
+    "@react-email/components": "^0.0.25",
+    "@tailwindcss/typography": "^0.5.15",
+    "@types/react": "^18.3.8",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.15.8",
     "daisyui": "^4.12.10",
-    "nodemailer": "^6.9.14",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "tailwindcss": "^3.4.4"
+    "marked": "^14.1.2",
+    "nodemailer": "^6.9.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.12"
   },
   "scripts": {
     "dev": "astro dev",
@@ -28,10 +29,10 @@
     "astro": "astro"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.5.7",
-    "@types/node": "^20.14.11",
+    "@tailwindcss/forms": "^0.5.9",
+    "@types/node": "^20.16.5",
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.5"
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.6"
   }
 }

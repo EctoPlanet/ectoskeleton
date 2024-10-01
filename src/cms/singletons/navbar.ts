@@ -4,7 +4,7 @@ import { buttons } from "@cms/fields";
 
 export const navbar = singleton({
   label: "Main Nav",
-  path: "src/content/settings/navbar",
+  path: "src/content/components/navbar",
   schema: {
     links: fields.array(
       fields.object({

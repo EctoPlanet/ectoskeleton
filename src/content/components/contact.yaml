@@ -1,0 +1,44 @@
+title: Contact
+description: >-
+  This is the Contact Page component. The form is created with the form builder
+  with reusable form fields. 
+contactDetails:
+  - discriminant: phone
+    value:
+      number: '0123456789'
+      name:
+        discriminant: true
+        value:
+          name: Customer Service
+  - discriminant: phone
+    value:
+      number: '0123456789'
+      name:
+        discriminant: true
+        value:
+          name: Sales
+  - discriminant: email
+    value:
+      email: test@mail.com
+      name:
+        discriminant: true
+        value:
+          name: Work
+items:
+  - label: Name
+    settings:
+      discriminant: text
+      value:
+        required: false
+  - label: Email
+    settings:
+      discriminant: email
+      value:
+        required: false
+  - label: Message
+    settings:
+      discriminant: textarea
+      value:
+        required: false
+recipients:
+  - email: patrick@thewebsiteguy.uk

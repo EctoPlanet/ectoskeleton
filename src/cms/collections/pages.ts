@@ -1,5 +1,5 @@
 import { collection, fields } from '@keystatic/core';
-import { form, hero, posts } from '@cms/blocks';
+import { form, hero, posts, content } from '@cms/blocks';
 
 export const pages = collection({
     label: 'Pages',
@@ -40,6 +40,7 @@ export const pages = collection({
             heroBlock: hero,
             postsBlock: posts,
             formBlock: form,
+            contentBlock: content
         },
         { 
           label: 'Blocks',

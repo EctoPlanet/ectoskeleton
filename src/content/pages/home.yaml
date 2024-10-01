@@ -1,5 +1,7 @@
 title: home
 draft: false
+seo:
+  discriminant: false
 blocks:
   - discriminant: heroBlock
     value:
@@ -17,24 +19,13 @@ blocks:
     value:
       heading: Latest Posts
       quantity: 1
-  - discriminant: formBlock
+  - discriminant: contentBlock
     value:
-      name: contact
-      recipients:
-        - email: patrick@thewebsiteguy.uk
-      items:
-        - label: Name
-          settings:
-            discriminant: text
-            value:
-              required: true
-        - label: Email
-          settings:
-            discriminant: email
-            value:
-              required: true
-        - label: Message
-          settings:
-            discriminant: textarea
-            value:
-              required: true
+      content: |
+        # Content Block
+
+        This is a **Rich text** content block
+  - discriminant: contentBlock
+    value:
+      content: |
+        ## Another content block

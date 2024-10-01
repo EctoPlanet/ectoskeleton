@@ -2,7 +2,8 @@
 import { getEntry, getCollection } from 'astro:content';
 import Hero from '@blocks/Hero.astro';
 import Posts from '@blocks/Posts.astro';
-import Form from '@blocks/Form'; // Ensure this path is correct
+import Form from '@blocks/Form';
+import Content from '@blocks/Content.astro';
 
 interface Props {
   page: string; 
@@ -41,6 +42,12 @@ const blocks = data?.blocks ?? [];
     return (
       <Form
         fields={fields} // Ensure this is always an array
+      />
+    );
+  } else if (block.discriminant === 'contentBlock') {
+    return (
+      <Content
+        content={block.value.content}
       />
     );
   }

@@ -5,7 +5,7 @@ links:
       value:
         link: /
 buttons:
-  - label: Test Button
-    link: '#'
+  - label: Contact
+    link: contact
     style: outline
     size: ''

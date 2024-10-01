@@ -1,0 +1,12 @@
+---
+import { marked } from 'marked'; // Import the Markdown parser
+
+const { content } = Astro.props;
+const htmlContent = marked(content); // Convert Markdown to HTML
+---
+
+<section class="bg-base-200">
+  <div class="max-w-screen-2xl mx-auto p-6">
+    <article set:html={htmlContent} class="prose max-w-none container mx-auto p-3"></article>
+  </div>
+</section>

@@ -1,0 +1,90 @@
+---
+import Layout from '@layouts/Layout.astro'
+import Form from '@components/blocks/Form'
+import { getEntry } from 'astro:content'
+
+const pageData = await getEntry('components', 'contact')
+
+const page = await pageData?.data
+const fields = page?.items || []
+const contactDetails = page?.contactDetails ?? []
+---
+
+<Layout title={page.title}>
+    <header>
+      <div class="container mx-auto px-3 py-10">
+        <div class="flex flex-col items-center gap-6">
+            <h1 class="text-5xl font-bold">{page.title}</h1>
+        <p>{page.description}</p>
+        </div>
+      </div>
+    </header>
+    <div class="container mx-auto px-3">
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <div>
+          {/* Render phone details */}
+          {contactDetails.some(contact => contact.discriminant === 'phone') && (
+            <div>
+              <header>
+                <h2>Phone</h2>
+              </header>
+              {
+                contactDetails
+                  .filter(contact => contact.discriminant === 'phone')
+                  .map(contact => (
+                    <div class="flex flex-row gap-2">
+                      {contact?.value?.name?.discriminant && (
+                        <span>{contact?.value?.name?.value?.name || contact?.value?.name?.value}:</span>
+                      )}
+                      <div>{contact.value.number}</div>
+                    </div>
+                  ))
+              }
+            </div>
+          )}
+  
+          {/* Render email details */}
+          {contactDetails.some(contact => contact.discriminant === 'email') && (
+            <div>
+              <header>
+                <h2>Email</h2>
+              </header>
+              {
+                contactDetails
+                  .filter(contact => contact.discriminant === 'email')
+                  .map(contact => (
+                    <div>
+                      <p>{contact.value.email}</p>
+                      {contact?.value?.name?.discriminant && (
+                        <p>{contact?.value?.name?.value?.name || contact?.value?.name?.value}</p>
+                      )}
+                    </div>
+                  ))
+              }
+            </div>
+          )}
+  
+          {/* Render address details */}
+          {contactDetails.some(contact => contact.discriminant === 'address') && (
+            <div>
+              <header>
+                <h2>Address</h2>
+              </header>
+              {
+                contactDetails
+                  .filter(contact => contact.discriminant === 'address')
+                  .map(contact => (
+                    <p>{contact.value.address}</p>
+                  ))
+              }
+            </div>
+          )}
+        </div>
+        <div class="w-3/4">
+          <Form fields={fields} />
+        </div>
+      </div>
+    </div>
+  </Layout>
+  
+  
